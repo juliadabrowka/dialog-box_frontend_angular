@@ -1,0 +1,25 @@
+<div class='menu-navbar'>
+  <div class="top-menu-pic" [routerLink]="['']">
+    <img class="logo-img" src='../../assets/images/logo-small.png'>
+  </div>
+  <span class="menu-select" nz-dropdown [nzDropdownMenu]="collectionsMenu">Collections</span>
+    <nz-dropdown-menu #collectionsMenu="nzDropdownMenu">
+      <a class="active-collection" [routerLink]="['active']">Active collections</a>
+      <li class="menu-items-list" *ngFor="let serie of series">
+        <a [routerLink]="['/serie', serie.slug]">{{serie.title}}</a>
+      </li>
+    </nz-dropdown-menu>
+  <div class="menu-select" [routerLink]="['about-us']">About us</div>
+  <div class="menu-select" [routerLink]="['charity']">Charity</div>
+  <div class='menu-select'>
+    <span class='social-media'>
+      <a [href]="urls.instagramUrl" target="blank">
+        <img class='sm-pics' [src]="paths.instagramPicPath"></a>
+      <a [href]="urls.openSeaUrl" target="blank">
+        <img class="sm-pics" [src]="paths.openSeaPicPath"></a>
+      <a [href]="urls.twitterUrl" target="blank">
+        <img class="sm-pics" [src]="paths.twitterPicPath"></a>
+    </span>
+  </div>
+  <hr>
+</div>

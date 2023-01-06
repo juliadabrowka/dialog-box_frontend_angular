@@ -1,0 +1,85 @@
+.menu-navbar {
+  position: fixed;
+  width: 88%;
+  top: 0;
+  z-index: 111;
+  font-size: 25px;
+  margin: 0% 5.8%;
+  cursor: default;
+}
+
+.social-media {
+  justify-content: flex-end;
+}
+
+.menu-items-list {
+  list-style: none;
+}
+
+.sm-pics {
+  width:30px;
+  height: 30px;
+  margin-right: 7.5px;
+  filter: grayscale(1);
+}
+
+.sm-pics:hover {
+  filter: grayscale(0);
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.logo-img {
+  width: 150px;
+  margin-top: 50px;
+}
+
+hr {
+  border: 1px solid black;
+  width: 68%;
+  position: absolute;;
+  left: 16.15%;
+  top: 70%;
+}
+
+.top-menu-pic, .menu-select {
+  width: 15.74%;
+  margin: 0% 2.6%
+}
+
+.menu-navbar, .menu-items-list, .active-collection {
+  background-color: white;
+}
+
+.menu-select, .active-collection {
+  justify-content: center;
+}
+
+.menu-navbar, .social-media, .top-menu-pic, .menu-select, .active-collection {
+  display: flex;
+}
+
+.menu-navbar, .social-media {
+  flex-direction: row;
+}
+
+.menu-navbar, .menu-select, .active-collection {
+  align-items: center;
+}
+
+.menu-items-list, .active-collection, .social-media {
+  width: 100%;
+}
+
+.menu-items-list, .active-collection {
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+.menu-items-list:hover, .active-collection:hover {
+  background-color: rgb(252, 252, 252);
+}

@@ -1,0 +1,21 @@
+<div class="all-content">
+    <div class="content">
+        <div class="texts">
+            <p class="serie-title">
+                {{serieDetails?.title}}
+            </p>
+            <p class="serie-description">
+                {{serieDetails?.description}}
+            </p>
+        </div>
+        <div class="serie-gallery">
+          <div class='token-container' *ngFor="let token of serieDetails?.tokens">
+              <img [src]="token.get_image" alt="">
+          <span class='token-under-title'>
+            <span class='title'>{{token.title}}</span>
+            <span class='under-title'>s{{token.serie}}|nº{{token.number}}|#{{token.author}}</span>
+          </span>
+        </div>
+      </div>
+    </div>
+</div>

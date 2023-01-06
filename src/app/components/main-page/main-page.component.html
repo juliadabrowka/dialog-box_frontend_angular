@@ -1,0 +1,27 @@
+<app-search-bar
+  [tokens]="tokens$ | async"
+  (searching)="getSearchState($event)"
+  (searchedTokens)="getTokens($event)"
+></app-search-bar>
+
+<div class="mainpage-tokens" *ngIf="!searching; else searchedTokens">
+    <div class="token-container" *ngFor="let token of tokens$ | async">
+      <ng-container *ngTemplateOutlet="tokenTemplateContent; context: { $implicit: token }"></ng-container>
+    </div>
+</div>
+
+<ng-template #searchedTokens>
+  <div class="mainpage-tokens">
+    <div class="token-container" *ngFor="let token of tokens">
+      <ng-container *ngTemplateOutlet="tokenTemplateContent; context: { $implicit: token }"></ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #tokenTemplateContent let-token>
+  <img [src]="token.get_image">
+  <span class="token-undertitle">
+        <span class="title">{{token.title}}</span>
+        <span class="undertitle">s{{token.serie}}|nº{{token.number}}|#{{token.author}}</span>
+      </span>
+</ng-template>

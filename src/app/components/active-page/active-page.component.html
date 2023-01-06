@@ -1,0 +1,20 @@
+<div class="all-content">
+  <ng-container *ngIf="(serie$ | async) as data">
+    <div class="sell-content" *ngFor="let token of data">
+      <div class="texts">
+        <p class="title-serie">
+            {{token.title}}
+        </p>
+        <p class="serie-description">
+          {{token.description}}
+        </p>
+        <div class="hr-line">
+          <a [routerLink]="['/serie', token.slug]"><app-button text="View gallery"></app-button></a>
+        </div>
+      </div>
+        <div class="gallery">
+              <img [src]='token.get_image' alt="">
+        </div>
+    </div>
+  </ng-container>
+</div>

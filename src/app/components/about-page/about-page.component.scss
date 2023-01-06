@@ -1,0 +1,51 @@
+.content-container {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 0% auto 3% auto;
+  justify-content: center;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input, textarea, nz-select {
+  padding: 6px
+}
+
+input:focus {
+  background-color: rgb(235, 230, 230);
+}
+
+.terms {
+  font-size: 12px;
+}
+
+.name, .email, .message {
+  width: 400px;
+}
+
+.name {
+  margin-bottom: 0.5em;
+}
+
+.message {
+  height: 200px;
+}
+
+input::placeholder, textarea::placeholder {
+  font-family: Inter;
+  font-size: 15px;
+}
+
+nz-select {
+  width: 415px;
+}
+
+.validation {
+  font-size: 10px;
+}

@@ -1,0 +1,24 @@
+<div class="content-container">
+  <app-text-content
+    [header]="header"
+    [content]="content"
+  ></app-text-content>
+
+    <form [formGroup]="formGroup">
+      <input [formControl]="controls.name" type="text" class="name" placeholder="Hello, my name is...">
+      <div *ngIf="controls.name.invalid" class="validation">*Your name should have at least one character</div>
+      <input [formControl]="controls.email" type="text" class="email" placeholder="My email address...">
+      <div *ngIf="controls.email.invalid" class="validation">*Your email in not valid</div>
+
+      <nz-select
+        nzPlaceHolder="Select the topic you wanna talk about"
+      >
+        <nz-option *ngFor="let option of optionList" [nzValue]="option" [nzLabel]="option.label"></nz-option>
+      </nz-select>
+
+      <textarea [formControl]="controls.message" type="text" class="message" placeholder="Tell us what you want to let us know. Maybe you have any cool idea or wanna do some colab? We are open for a Dialog(box) ;-)"></textarea><br>
+      <label nz-checkbox [formControl]="controls.terms" name="terms" class="terms">Accept terms and conditions of private policy of Dialogbox</label>
+        <div class="validation" *ngIf="!controls.terms.value">*You have to accept terms and conditions to end us a message</div>
+            <app-button [isDisabled]="!controls.terms.value || formGroup.invalid" type="submit" [text]="'Send us a message'" (click)="submitForm(formGroup)"></app-button>
+    </form>
+</div>
